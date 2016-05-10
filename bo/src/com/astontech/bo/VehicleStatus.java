@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by Carlos Zubiran on 5/9/2016.
  */
-public class VehicleStatus {
+public class VehicleStatus extends BaseBO{
 
     private int VehicleStatusId;
     private int VehicleId;

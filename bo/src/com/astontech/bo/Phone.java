@@ -3,7 +3,7 @@ package com.astontech.bo;
 /**
  * Created by Carlos Zubiran on 5/9/2016.
  */
-public class Phone {
+public class Phone extends BaseBO{
 
     private int PhoneId;
     private int EntityTypeId;

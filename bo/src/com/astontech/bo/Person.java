@@ -1,9 +1,14 @@
 package com.astontech.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Carlos Zubiran on 5/9/2016.
  */
 public class Person extends BaseBO {
+
+    //region PROPERTIES
 
     // PersonId
     private int PersonId;
@@ -17,6 +22,20 @@ public class Person extends BaseBO {
     private String DisplayFirstName;
     // Gender
     private String Gender;
+    // List of Email Objects
+    private List<Email> Emails;
+
+    //endregion PROPERTIES
+
+    //region CONSTRUCTOR
+
+    public Person() {
+        this.Emails = new ArrayList<>();
+    }
+
+    //endregion CONSTRUCTOR
+
+    //region GETTERS / SETTERS
 
     public int getPersonId() {
         return PersonId;
@@ -66,7 +85,18 @@ public class Person extends BaseBO {
         Gender = gender;
     }
 
-    // CUSTOM METHODDS
+    public List<Email> getEmails() {
+        return Emails;
+    }
+
+    public void setEmails(List<Email> emails) {
+        Emails = emails;
+    }
+
+    //endregion GETTERS / SETTERS
+
+    //region CUSTOM METHODDS
+
     //notes:    this will become an extension method
     public static boolean isNullOrEmpty(String s){
         return s == null || s.length() == 0;
@@ -90,5 +120,6 @@ public class Person extends BaseBO {
 
     }
 
+    //endregion CUSTOM METHODS
 
 }

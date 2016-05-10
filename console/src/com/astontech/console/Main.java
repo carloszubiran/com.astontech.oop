@@ -2,6 +2,7 @@ package com.astontech.console;
 
 import com.astontech.bo.Employee;
 import com.astontech.bo.Person;
+import com.astontech.bo.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,13 +19,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //notes:    private static method for the lesson
-        LessonMethods();
+        LessonCollectionLAB();
 
 
-
-
-
+//        LessonObjectsLab();
 
 //        try {
 //            LessonExceptions();
@@ -40,6 +38,98 @@ public class Main {
 //            System.out.println(ex);
 //        }
 
+
+    }
+
+    private static void LessonCollectionLAB() {
+
+    }
+
+    private static void LessonComplexProperties() {
+
+        //notes:    when to use inheritance (should answer the question 'IS A'
+        //          when to use complex (nested) objects (should answer the questionL 'HAS A')
+
+        EntityType emailWorkType = new EntityType("Work");
+        emailWorkType.setEntityId(1);
+
+        Email myEmail = new Email("carlos@carlos.com");
+        myEmail.setEmailType(emailWorkType);
+
+        System.out.println(myEmail.getEmailAddress() + " Type: "
+                + myEmail.getEmailType().getEntityTypeName());
+
+        //notes:    collection/list of complex(nested) objects as a property.
+        Employee myEmployee = new Employee();
+        myEmployee.getEmails().add(new Email("test@test.com"));
+        myEmployee.getEmails().add(new Email("dan@test.com"));
+        myEmployee.getEmails().add(new Email("jason@test.com"));
+
+        for (Email email : myEmployee.getEmails()) {
+            System.out.println(email.getEmailAddress());
+
+        }
+    }
+
+    private static void LessonCollections() {
+
+        //notes:    List<T> - generic type 'T'
+        List<Employee> employeeList = new ArrayList<>();
+
+        Employee emp1 = new Employee("Dan", "Simmer");
+        Employee emp2 = new Employee("James", "McRoberts");
+        Employee emp3 = new Employee("Sean", "Nilsen");
+
+        employeeList.add(emp1); // index 0
+        employeeList.add(emp2); // 1
+        employeeList.add(emp3); // 2
+        employeeList.add(new Employee("Adrian", "Ratanyake"));  //3
+        employeeList.add(new Employee("John", "Doe"));          //4
+
+        System.out.println(employeeList.get(0).GetFullName());
+
+        for (Employee e: employeeList) {
+            System.out.println(e.GetFullName());
+        }
+
+
+
+    }
+
+    private static void LessonObjectsLab() {
+
+
+        // Create all BOs
+        Address anAddress = new Address();
+        Client aClient = new Client();
+        ClientContract theClientContract = new ClientContract();
+        Email aEmail = new Email();
+        Employee anEmployee = new Employee();
+        EmployeeProject aEmployeeProject = new EmployeeProject();
+        Entity aEntity = new Entity();
+        EntityType aEntityType = new EntityType();
+        LoyaltyAccount aLoyaltyAccount = new LoyaltyAccount();
+        LoyaltyCompany aLoyaltyCompany = new LoyaltyCompany();
+        Person aPerson = new Person();
+        Phone aPhone = new Phone();
+        Project aProject = new Project();
+        ProjectStatus theProjectStatus = new ProjectStatus();
+        Review aReview = new Review();
+        ReviewData theReviewData = new ReviewData();
+        Training theTraining = new Training();
+        TrainingData theTrainingData = new TrainingData();
+        Vehicle aVehicle = new Vehicle();
+        VehicleMake theVehicleMake = new VehicleMake();
+        VehicleModel theVehicleModel = new VehicleModel();
+        VehicleStatus theVehicleStatud = new VehicleStatus();
+
+        anAddress.setCity("Saint Paul");
+        aClient.setClientName("Carlos Zubiran");
+        theClientContract.setPersonId(1);
+
+        System.out.println(anAddress.getCity());
+        System.out.println(aClient.getClientName());
+        System.out.println(theClientContract.getPersonId());
     }
 
     private static void LessonMethods() {
