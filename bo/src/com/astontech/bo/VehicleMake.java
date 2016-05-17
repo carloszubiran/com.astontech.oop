@@ -7,16 +7,16 @@ import java.util.Date;
  */
 public class VehicleMake extends BaseBO{
 
-    private int VeicleMakeId;
+    private int VehicleMakeId;
     private String VehicleMakeName;
     private Date CreateDate;
 
-    public int getVechivleMakeId() {
-        return VeicleMakeId;
+    public int getVehicleMakeId() {
+        return VehicleMakeId;
     }
 
-    public void setVeicleMakeId(int vechivleMakeId) {
-        VeicleMakeId = vechivleMakeId;
+    public void setVehicleMakeId(int vechivleMakeId) {
+        VehicleMakeId = vechivleMakeId;
     }
 
     public String getVehicleMakeName() {

@@ -9,12 +9,14 @@ import java.util.EnumMap;
 public class Employee extends Person {
 
 
-    // PARAMETERS
+    //region PARAMETERS
     private int EmployeeId;
     private Date HireDate;
     private Date TermDate;
+    private Date CreateDate;
+    //endregion
 
-    // CONSTRUCTORS
+    //region CONSTRUCTORS
 
     public Employee() {
 
@@ -32,6 +34,8 @@ public class Employee extends Person {
     public Employee(String lastName) {
         this.setLastName(lastName);
     }
+
+    //endregion
 
     public int getEmployeeId() {
         return EmployeeId;
@@ -57,6 +61,12 @@ public class Employee extends Person {
         TermDate = termDate;
     }
 
+    public Date getCreateDate() {
+        return CreateDate;
+    }
 
-
+    public void setCreateDate(Date createDate) {
+        CreateDate = createDate;
+    }
 }
+

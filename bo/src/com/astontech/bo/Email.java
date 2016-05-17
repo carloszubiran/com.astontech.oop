@@ -10,18 +10,18 @@ public class Email extends BaseBO{
     private int EmailId;
     private String EmailAddress;
     private int EmployeeId;
-    private EntityType EmailType;
+    private EntityType EntityType;
 
     //endregion PROPERTIES
 
     //region CONSTRUCTORS
 
     public Email() {
-        this.EmailType = new EntityType();
+        this.EntityType = new EntityType();
     }
 
     public Email(String emailAddress) {
-        this.EmailType = new EntityType();
+        this.EntityType = new EntityType();
         this.EmailAddress = emailAddress;
 
     }
@@ -54,12 +54,12 @@ public class Email extends BaseBO{
         EmployeeId = employeeId;
     }
 
-    public EntityType getEmailType() {
-        return EmailType;
+    public EntityType getEntityType() {
+        return EntityType;
     }
 
-    public void setEmailType(EntityType emailType) {
-        EmailType = emailType;
+    public void setEntityType(EntityType entityType) {
+        EntityType = entityType;
     }
 
 //endregion GETTERS / SETTERS

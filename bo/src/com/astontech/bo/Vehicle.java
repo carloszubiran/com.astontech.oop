@@ -1,6 +1,5 @@
 package com.astontech.bo;
 
-import javax.swing.plaf.synth.Region;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,9 +19,9 @@ public class Vehicle extends BaseBO{
     private boolean IsPurchase;
     private int PurchasePrice;
     private Date PurchaseDate;
-    private List<VehicleMake> vehicleMakes;
-    private List<VehicleModel> vehicleModels;
-    private List<VehicleStatus> vehicleStatuses;
+    private VehicleMake vehicleMake;
+    private VehicleModel vehicleModel;
+    private VehicleStatus vehicleStatus;
 
     //endregion PROPERTIES
 
@@ -30,9 +29,9 @@ public class Vehicle extends BaseBO{
 
     public Vehicle() {
 
-        vehicleMakes = new ArrayList<>();
-        vehicleModels = new ArrayList<>();
-        vehicleStatuses = new ArrayList<>();
+        vehicleMake = new VehicleMake();
+        vehicleModel = new VehicleModel();
+        vehicleStatus = new VehicleStatus();
 
     }
 
@@ -43,9 +42,8 @@ public class Vehicle extends BaseBO{
     public Vehicle(int vehicleId, int year, String licensePlate,
                    String VIN, String color, boolean isPurchase,
                    int purchasePrice, Date purchaseDate,
-                   List<VehicleMake> vehicleMakes,
-                   List<VehicleModel> vehicleModels,
-                   List<VehicleStatus> vehicleStatuses) {
+                   VehicleMake vehicleMake, VehicleModel vehicleModel,
+                   VehicleStatus vehicleStatus) {
         VehicleId = vehicleId;
         Year = year;
         LicensePlate = licensePlate;
@@ -54,14 +52,15 @@ public class Vehicle extends BaseBO{
         IsPurchase = isPurchase;
         PurchasePrice = purchasePrice;
         PurchaseDate = purchaseDate;
-        this.vehicleMakes = vehicleMakes;
-        this.vehicleModels = vehicleModels;
-        this.vehicleStatuses = vehicleStatuses;
+        this.vehicleMake = vehicleMake;
+        this.vehicleModel = vehicleModel;
+        this.vehicleStatus = vehicleStatus;
     }
 
-    //endregion
+//endregion
 
     //region GETTERS / SETTERS
+
 
     public int getVehicleId() {
         return VehicleId;
@@ -127,31 +126,31 @@ public class Vehicle extends BaseBO{
         PurchaseDate = purchaseDate;
     }
 
-    public List<VehicleMake> getVehicleMakes() {
-        return vehicleMakes;
+    public VehicleMake getVehicleMake() {
+        return vehicleMake;
     }
 
-    public void setVehicleMakes(List<VehicleMake> vehicleMakes) {
-        this.vehicleMakes = vehicleMakes;
+    public void setVehicleMake(VehicleMake vehicleMake) {
+        this.vehicleMake = vehicleMake;
     }
 
-    public List<VehicleModel> getVehicleModels() {
-        return vehicleModels;
+    public VehicleModel getVehicleModel() {
+        return vehicleModel;
     }
 
-    public void setVehicleModels(List<VehicleModel> vehicleModels) {
-        this.vehicleModels = vehicleModels;
+    public void setVehicleModel(VehicleModel vehicleModel) {
+        this.vehicleModel = vehicleModel;
     }
 
-    public List<VehicleStatus> getVehicleStatuses() {
-        return vehicleStatuses;
+    public VehicleStatus getVehicleStatus() {
+        return vehicleStatus;
     }
 
-    public void setVehicleStatuses(List<VehicleStatus> vehicleStatuses) {
-        this.vehicleStatuses = vehicleStatuses;
+    public void setVehicleStatus(VehicleStatus vehicleStatus) {
+        this.vehicleStatus = vehicleStatus;
     }
 
-    //endregion GETTERS / SETTERS
+//endregion GETTERS / SETTERS
 
     //region CUSTOM / METHODS
 
@@ -166,6 +165,23 @@ public class Vehicle extends BaseBO{
 
         return "Purchase Price: " + getPurchasePrice() + "Purchase Date: " + getPurchaseDate();
 
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "VehicleId=" + VehicleId +
+                ", Year=" + Year +
+                ", LicensePlate='" + LicensePlate + '\'' +
+                ", VIN='" + VIN + '\'' +
+                ", Color='" + Color + '\'' +
+                ", IsPurchase=" + IsPurchase +
+                ", PurchasePrice=" + PurchasePrice +
+                ", PurchaseDate=" + PurchaseDate +
+                ", vehicleMake=" + vehicleMake.getVehicleMakeName() +
+                ", vehicleModel=" + vehicleModel.getVehicleModelName() +
+                ", vehicleStatus=" + vehicleStatus +
+                '}';
     }
 
     //endregion

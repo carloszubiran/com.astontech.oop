@@ -44,4 +44,8 @@ public class EntityType extends BaseBO{
 
     //endregion GETTERS / SETTERS
 
+    public String test_method() {
+        return "sub_method";
+    }
+
 }

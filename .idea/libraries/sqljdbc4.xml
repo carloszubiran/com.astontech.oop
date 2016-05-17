@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sqljdbc4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/sqljdbc_6.0/enu/sqljdbc4.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/sqljdbc_6.0/enu/sqljdbc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_6.0/enu/auth/x64" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
